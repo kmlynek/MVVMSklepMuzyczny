@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MVVMFirma.ViewModels
+{
+    internal class WszystkieElementyKoszykaViewModel : WorkspaceViewModel
+    {
+        public WszystkieElementyKoszykaViewModel()
+        {
+            base.DisplayName = "Elementy Koszyka";
+        }
+    }
+}
