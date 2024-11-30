@@ -22,7 +22,6 @@
           <Property Name="DostawcaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
           <Property Name="Kontakt" Type="nvarchar" MaxLength="100" />
-          <Property Name="Adres" Type="nvarchar" MaxLength="100" />
           <Property Name="AdresID" Type="int" />
         </EntityType>
         <EntityType Name="ElementyKoszyka">
@@ -59,7 +58,6 @@
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
-          <Property Name="Adres" Type="nvarchar" MaxLength="100" />
           <Property Name="AdresID" Type="int" />
         </EntityType>
         <EntityType Name="KoszykiZakupowe">
@@ -500,7 +498,6 @@
           <Property Name="DostawcaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Kontakt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AdresID" Type="Int32" />
           <NavigationProperty Name="Adresy" Relationship="Self.FK__Dostawcy__AdresI__52593CB8" FromRole="Dostawcy" ToRole="Adresy" />
           <NavigationProperty Name="ProduktyDostawcy" Relationship="Self.FK__ProduktyD__Dosta__36B12243" FromRole="Dostawcy" ToRole="ProduktyDostawcy" />
@@ -543,7 +540,6 @@
           <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="AdresID" Type="Int32" />
           <NavigationProperty Name="Adresy" Relationship="Self.FK__Klienci__AdresID__5070F446" FromRole="Klienci" ToRole="Adresy" />
           <NavigationProperty Name="KoszykiZakupowe" Relationship="Self.FK__KoszykiZa__Klien__3F466844" FromRole="Klienci" ToRole="KoszykiZakupowe" />
@@ -1010,7 +1006,6 @@
                 <ScalarProperty Name="DostawcaID" ColumnName="DostawcaID" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Kontakt" ColumnName="Kontakt" />
-                <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="AdresID" ColumnName="AdresID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1051,7 +1046,6 @@
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="AdresID" ColumnName="AdresID" />
               </MappingFragment>
             </EntityTypeMapping>

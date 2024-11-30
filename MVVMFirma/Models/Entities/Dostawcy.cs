@@ -23,7 +23,6 @@ namespace MVVMFirma.Models.Entities
         public int DostawcaID { get; set; }
         public string Nazwa { get; set; }
         public string Kontakt { get; set; }
-        public string Adres { get; set; }
         public Nullable<int> AdresID { get; set; }
     
         public virtual Adresy Adresy { get; set; }

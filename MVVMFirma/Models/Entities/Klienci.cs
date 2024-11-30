@@ -27,7 +27,6 @@ namespace MVVMFirma.Models.Entities
         public string Nazwisko { get; set; }
         public string Email { get; set; }
         public string Telefon { get; set; }
-        public string Adres { get; set; }
         public Nullable<int> AdresID { get; set; }
     
         public virtual Adresy Adresy { get; set; }

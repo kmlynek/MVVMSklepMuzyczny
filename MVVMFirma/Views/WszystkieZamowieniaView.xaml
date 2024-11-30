@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label>Tutaj beda wyswietlane wszystkie zamowienia</Label>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"/>
+                <DataGridTextColumn Header="Klient ID"/>
+                <DataGridTextColumn Header="DataZamowienia"/>
+                <DataGridTextColumn Header="Status"/>
+                <DataGridTextColumn Header="Kwota Łączna"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </local:WszystkieViewBase>
