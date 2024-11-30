@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for WszystkieStanMagazynowyView.xaml
     /// </summary>
-    public partial class WszystkieStanMagazynowyView : UserControl
+    public partial class WszystkieStanMagazynowyView : WszystkieViewBase
     {
         public WszystkieStanMagazynowyView()
         {

@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for WszystkieElementyKoszykaView.xaml
     /// </summary>
-    public partial class WszystkieElementyKoszykaView : UserControl
+    public partial class WszystkieElementyKoszykaView : WszystkieViewBase
     {
         public WszystkieElementyKoszykaView()
         {

@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for WszystkieSzczegolyZamowieniaView.xaml
     /// </summary>
-    public partial class WszystkieSzczegolyZamowieniaView : UserControl
+    public partial class WszystkieSzczegolyZamowieniaView : WszystkieViewBase
     {
         public WszystkieSzczegolyZamowieniaView()
         {

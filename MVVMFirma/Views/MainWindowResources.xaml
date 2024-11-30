@@ -71,6 +71,12 @@
     <DataTemplate DataType="{x:Type vm:WszystkieProduktyDostawcyViewModel}">
         <vw:WszystkieProduktyDostawcyView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyProduktViewModel}">
+        <vw:NowyProduktView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieProduktyViewModel}">
+        <vw:WszystkieProduktyView/>
+    </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowaPromocjaViewModel}">
         <vw:NowaPromocjaView/>
     </DataTemplate>

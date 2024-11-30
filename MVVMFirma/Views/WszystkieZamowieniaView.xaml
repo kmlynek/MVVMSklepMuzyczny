@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.WszystkieZamowieniaView"
+﻿<local:WszystkieViewBase x:Class="MVVMFirma.Views.WszystkieZamowieniaView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid>
         <Label>Tutaj beda wyswietlane wszystkie zamowienia</Label>
     </Grid>
-</UserControl>
+</local:WszystkieViewBase>

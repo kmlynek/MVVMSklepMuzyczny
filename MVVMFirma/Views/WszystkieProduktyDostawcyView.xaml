@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.WszystkieProduktyDostawcyView"
+﻿<local:WszystkieViewBase x:Class="MVVMFirma.Views.WszystkieProduktyDostawcyView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid>
         <Label>Tutaj beda wszystkie produkty dostawcy</Label>
     </Grid>
-</UserControl>
+</local:WszystkieViewBase>
