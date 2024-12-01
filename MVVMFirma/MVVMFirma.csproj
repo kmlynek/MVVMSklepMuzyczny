@@ -175,6 +175,7 @@
     <Compile Include="ViewModels\WszystkieStanMagazynowyViewModel.cs" />
     <Compile Include="ViewModels\WszystkieSzczegolyZamowieniaViewModel.cs" />
     <Compile Include="ViewModels\WszystkieTowaryViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieViewModel.cs" />
     <Compile Include="ViewModels\WszystkieZamowieniaViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

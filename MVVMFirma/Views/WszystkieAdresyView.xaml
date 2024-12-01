@@ -9,11 +9,11 @@
     <Grid Background="White">
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"/>
-                <DataGridTextColumn Header="Ulica"/>
-                <DataGridTextColumn Header="Miasto"/>
-                <DataGridTextColumn Header="Kod Pocztowy"/>
-                <DataGridTextColumn Header="Kraj"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding AdresID}"/>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Miasto" Binding="{Binding Miasto}"/>
+                <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding KodPocztowy}"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Kraj}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
