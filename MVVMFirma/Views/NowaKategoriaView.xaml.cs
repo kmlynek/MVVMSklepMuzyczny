@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for NowaKategoriaView.xaml
     /// </summary>
-    public partial class NowaKategoriaView : UserControl
+    public partial class NowaKategoriaView : JedenViewBase
     {
         public NowaKategoriaView()
         {

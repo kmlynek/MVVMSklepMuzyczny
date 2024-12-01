@@ -9,33 +9,13 @@ using System.Windows.Input;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NowyAdresViewModel : WorkspaceViewModel // bo wszystkie zakładki dziedziczą po WVM
-    {
-        #region DB
-        private SklepMuzycznyEntities sklepMuzycznyEntities;
-        #endregion
-        #region Item
-        private Adresy adres;
-        #endregion
-        #region Command
-        //to jest komenda któa zostanie podpięta pod przycisk zapisz i zamknij, wywola funkcja save and close
-        private BaseCommand _SaveCommand;
-        public ICommand SaveCommand
-        {
-            get
-            {
-                if (_SaveCommand == null)
-                    _SaveCommand = new BaseCommand(() => SaveAndClose());
-                return _SaveCommand;
-            }
-        }
-        #endregion
+    public class NowyAdresViewModel : JedenViewModel<Adresy> // bo wszystkie zakładki dziedziczą po WVM
+    {   
         #region Constructor
         public NowyAdresViewModel()
+            :base("Adres")
         {
-            base.DisplayName = "Adres";
-            sklepMuzycznyEntities = new SklepMuzycznyEntities();
-            adres = new Adresy();
+            item = new Adresy();
         }
         #endregion
         #region Properties
@@ -44,11 +24,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return adres.Ulica;
+                return item.Ulica;
             }
             set
             {
-                adres.Ulica = value;
+                item.Ulica = value;
                 OnPropertyChanged(() => Ulica);
             }
         }
@@ -56,11 +36,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return adres.Miasto;
+                return item.Miasto;
             }
             set
             {
-                adres.Miasto = value;
+                item.Miasto = value;
                 OnPropertyChanged(() => Miasto);
             }
         }
@@ -68,11 +48,11 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return adres.KodPocztowy;
+                return item.KodPocztowy;
             }
             set
             {
-                adres.KodPocztowy = value;
+                item.KodPocztowy = value;
                 OnPropertyChanged(() => KodPocztowy);
             }
         }
@@ -80,25 +60,20 @@ namespace MVVMFirma.ViewModels
         {
             get
             {
-                return adres.Kraj;
+                return item.Kraj;
             }
             set
             {
-                adres.Kraj = value;
+                item.Kraj = value;
                 OnPropertyChanged(() => Kraj);
             }
         }
         #endregion
         #region Helpers
-        public void Save()
+        public override void Save()
         {
-            sklepMuzycznyEntities.Adresy.Add(adres); //dodaje do lokalnej kolekcji
+            sklepMuzycznyEntities.Adresy.Add(item); //dodaje do lokalnej kolekcji
             sklepMuzycznyEntities.SaveChanges(); //zapisuje zmiany do bazy danych
-        }
-        public void SaveAndClose()
-        {
-            Save();
-            base.OnRequestClose();//zamkniecie zakladki
         }
         #endregion
     }
