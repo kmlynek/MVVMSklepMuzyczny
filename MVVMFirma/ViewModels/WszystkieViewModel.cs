@@ -45,9 +45,11 @@ namespace MVVMFirma.ViewModels
         }
         #endregion
         #region Constructor
-        public WszystkieViewModel()
+
+        public WszystkieViewModel(String displayName)
         {
             sklepMuzycznyEntities = new SklepMuzycznyEntities();
+            base.DisplayName = displayName;
         }
         #endregion
         #region Helpers

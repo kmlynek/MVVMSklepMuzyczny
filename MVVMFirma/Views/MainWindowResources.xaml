@@ -137,18 +137,14 @@
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <!-- 
-                This template ensures that content of a HeaderedContentControl 
-                fills the available vertical space, and adds scrolling capabilities.
-            -->
                 <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
                     <DockPanel>
-                        <!-- Header Section -->
+                        <!-- Header -->
                         <ContentPresenter 
                         DockPanel.Dock="Top"
                         ContentSource="Header" 
                         ContentTemplate="{TemplateBinding HeaderTemplate}" />
-                        <!-- Content Section with ScrollViewer -->
+                        <!-- ScrollViewer -->
                         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                             <ContentPresenter 
                             ContentSource="Content" 
