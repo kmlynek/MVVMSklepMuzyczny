@@ -72,6 +72,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="Models\EntitiesForView\FakturyForAllView.cs" />
     <Compile Include="Models\Entities\Adresy.cs">
       <DependentUpon>ModelSklepMuzyczny.tt</DependentUpon>
     </Compile>
