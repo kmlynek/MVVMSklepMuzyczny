@@ -9,13 +9,15 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"/>
-                <DataGridTextColumn Header="Imię"/>
-                <DataGridTextColumn Header="Nazwisko"/>
-                <DataGridTextColumn Header="Email"/>
-                <DataGridTextColumn Header="Stanowisko"/>
-                <DataGridTextColumn Header="Wynagrodzenie"/>
-                <DataGridTextColumn Header="Adres ID"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding PracownikID}"/>
+                <DataGridTextColumn Header="Imię" Binding="{Binding Imie}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Stanowisko" Binding="{Binding Stanowisko}"/>
+                <DataGridTextColumn Header="Wynagrodzenie" Binding="{Binding Wynagrodzenie}"/>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding AdresyUlica}"/>
+                <DataGridTextColumn Header="Miasto" Binding="{Binding AdresyMiasto}"/>
+                <DataGridTextColumn Header="Kod pocztowy" Binding="{Binding AdresyKodPocztowy}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

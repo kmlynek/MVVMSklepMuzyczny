@@ -72,7 +72,20 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
+    <Compile Include="Models\EntitiesForView\DostawcyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ElementyKoszykaForAllView.cs" />
     <Compile Include="Models\EntitiesForView\FakturyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\KlienciForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\KoszykiZakupoweForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\PlatnosciForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\PracownicyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ProduktyDostawcyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ProduktyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\PromocjeForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\RecenzjeForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\StanMagazynowyForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\SzczegolyZamowieniaForAllView.cs" />
+    <Compile Include="Models\EntitiesForView\ZamowieniaForAllView.cs" />
     <Compile Include="Models\Entities\Adresy.cs">
       <DependentUpon>ModelSklepMuzyczny.tt</DependentUpon>
     </Compile>
