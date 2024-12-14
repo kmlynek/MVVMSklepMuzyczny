@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.Entities;
+﻿using MVVMFirma.Models.BusinessLogic;
+using MVVMFirma.Models.Entities;
+using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace MVVMFirma.ViewModels
 {
-    internal class NowaFakturaViewModel : JedenViewModel<Faktury>
+    public class NowaFakturaViewModel : JedenViewModel<Faktury>
     {
         #region Constructor
         public NowaFakturaViewModel()
             : base("Faktura")
         {
-            item=new Faktury();
-        }
+            item = new Faktury();
+        } 
         #endregion
         #region Pola
         //dla każdego pola na interface dodajemy properties
@@ -48,12 +50,20 @@ namespace MVVMFirma.ViewModels
         #endregion
         #region Właściwości dla Combobox
         //properties, który uzuepełni wszystkie Faktury w comboboxie
-        public IQueryable<KeyAndValue> FakturyItems
+        public IQueryable<KeyAndValue> ZamowieniaItems
         {
             get
             {
-                
+                return new ZamowieniaB(sklepMuzycznyEntities).GetZamowieniaKeyAndValueItems();
             }
+        }
+        #endregion
+        #region Helpers
+        public override void Save()
+        {
+            sklepMuzycznyEntities.Faktury.Add(item);
+            sklepMuzycznyEntities.SaveChanges();
+        }
         #endregion
     }
 }

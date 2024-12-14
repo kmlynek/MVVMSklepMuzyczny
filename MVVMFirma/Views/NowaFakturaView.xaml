@@ -18,10 +18,15 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Margin="0,8,0,8" Content="Zamówienie"/>
-        <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8" />
+        <ComboBox Grid.Column="1" Grid.Row="0" Margin="0,8,0,8"
+                  ItemsSource="{Binding ZamowieniaItems}"
+                  DisplayMemberPath="Value"
+                  SelectedValuePath="Key"
+                  SelectedValue="{Binding Path=ZamowienieID, Mode=TwoWay}"
+                  />
 
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Data wystawienia"/>
-        <DatePicker Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" />
+        <DatePicker Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}"/>
 
     </Grid>
 </local:JedenViewBase>
