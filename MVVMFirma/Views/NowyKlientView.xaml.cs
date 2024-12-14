@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for NowyKlientView.xaml
     /// </summary>
-    public partial class NowyKlientView : UserControl
+    public partial class NowyKlientView : JedenViewBase
     {
         public NowyKlientView()
         {

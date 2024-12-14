@@ -13,7 +13,7 @@
                 <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding ProduktyNazwa}"/>
                 <DataGridTextColumn Header="Cena" Binding="{Binding ProduktyCena}"/>
                 <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"/>
-                <DataGridTextColumn Header="Rabat" Binding="{Binding Rabat}"/>
+                <DataGridTextColumn Header="Rabat %" Binding="{Binding Rabat}"/>
                 <DataGridTextColumn Header="Data Rozpoczęcia" Binding="{Binding DataRozpoczecia}"/>
                 <DataGridTextColumn Header="Data Zakończenia" Binding="{Binding DataZakonczenia}"/>
             </DataGrid.Columns>

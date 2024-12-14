@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for NowaRecenzjaView.xaml
     /// </summary>
-    public partial class NowaRecenzjaView : UserControl
+    public partial class NowaRecenzjaView : JedenViewBase
     {
         public NowaRecenzjaView()
         {

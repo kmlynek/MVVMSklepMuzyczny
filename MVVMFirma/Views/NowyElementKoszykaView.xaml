@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MVVMFirma.Views.NowyElementKoszykaView"
+﻿<local:JedenViewBase x:Class="MVVMFirma.Views.NowyElementKoszykaView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,4 +9,4 @@
     <Grid>
         <Label>Tutaj będzie widoczny nowy element koszyka</Label>
     </Grid>
-</UserControl>
+</local:JedenViewBase>

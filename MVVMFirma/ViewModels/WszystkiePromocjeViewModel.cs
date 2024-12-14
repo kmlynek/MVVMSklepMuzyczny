@@ -31,6 +31,7 @@ namespace MVVMFirma.ViewModels
                        ProduktyNazwa = promocja.Produkty.Nazwa,
                        ProduktyCena = promocja.Produkty.Cena,
                        Opis = promocja.Opis,
+                       Rabat = promocja.Rabat,
                        DataRozpoczecia = promocja.DataRozpoczecia,
                        DataZakonczenia = promocja.DataZakonczenia
                    }

@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for NowyElementKoszykaView.xaml
     /// </summary>
-    public partial class NowyElementKoszykaView : UserControl
+    public partial class NowyElementKoszykaView : JedenViewBase
     {
         public NowyElementKoszykaView()
         {

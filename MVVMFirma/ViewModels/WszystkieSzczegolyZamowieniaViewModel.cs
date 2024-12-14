@@ -31,6 +31,7 @@ namespace MVVMFirma.ViewModels
                        ZamowieniaKlienciImie = szczegolZamowienia.Zamowienia.Klienci.Imie,
                        ZamowieniaKlienciNazwisko = szczegolZamowienia.Zamowienia.Klienci.Nazwisko,
                        ZamowieniaKlienciTelefon = szczegolZamowienia.Zamowienia.Klienci.Telefon,
+                       ZamowieniaKlienciEmail = szczegolZamowienia.Zamowienia.Klienci.Email,
                        ProduktyNazwa = szczegolZamowienia.Produkty.Nazwa,
                        ProduktyCena = szczegolZamowienia.Produkty.Cena,
                        Ilosc = szczegolZamowienia.Ilosc

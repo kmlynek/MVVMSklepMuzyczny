@@ -18,7 +18,7 @@ namespace MVVMFirma.Views
     /// <summary>
     /// Interaction logic for NoweSzczegolyZamowieniaView.xaml
     /// </summary>
-    public partial class NoweSzczegolyZamowieniaView : UserControl
+    public partial class NoweSzczegolyZamowieniaView : JedenViewBase
     {
         public NoweSzczegolyZamowieniaView()
         {
