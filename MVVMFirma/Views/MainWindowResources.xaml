@@ -86,7 +86,7 @@
     <DataTemplate DataType="{x:Type vm:NowaRecenzjaViewModel}">
         <vw:NowaRecenzjaView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieRecenzjeViewModel}">
+    <DataTemplate DataType="{x:Type vm:WszystkieRecencjeViewModel}">
         <vw:WszystkieRecenzjeView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyStanMagazynowyViewModel}">

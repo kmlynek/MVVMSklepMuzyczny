@@ -9,5 +9,10 @@ namespace MVVMFirma.Models.EntitiesForView
     public class ProduktyForAllView
     {
         public int ProduktID { get; set; }
+        public string Nazwa { get; set; }
+        public string Opis { get; set; }
+        public decimal? Cena { get; set; }
+        public string KategorieNazwa { get; set; }
+        public string KategorieOpis { get; set; }
     }
 }

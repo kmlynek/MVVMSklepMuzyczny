@@ -298,7 +298,7 @@ namespace MVVMFirma.ViewModels
 
         private void ShowAllRecenzje()
         {
-            ShowAll<WszystkieRecenzjeViewModel>();
+            ShowAll<WszystkieRecencjeViewModel>();
         }
 
         private void ShowAllStanMagazynowy()

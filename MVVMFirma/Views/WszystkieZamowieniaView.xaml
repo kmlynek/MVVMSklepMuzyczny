@@ -9,11 +9,12 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"/>
-                <DataGridTextColumn Header="Klient ID"/>
-                <DataGridTextColumn Header="DataZamowienia"/>
-                <DataGridTextColumn Header="Status"/>
-                <DataGridTextColumn Header="Kwota Łączna"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ZamowienieID}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding KlienciEmail}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding KlienciTelefon}"/>
+                <DataGridTextColumn Header="Data Zamowienia" Binding="{Binding DataZamowienia}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Kwota Łączna" Binding="{Binding KwotaLaczna}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
