@@ -11,7 +11,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding KoszykID}"/>
                 <DataGridTextColumn Header="Klient ID" Binding="{Binding KlienciEmail}"/>
-                <DataGridTextColumn Header="Data Utworzenia" Binding="{Binding KlienciTelefon}"/>
+                <DataGridTextColumn Header="Data Utworzenia" Binding="{Binding DataUtworzenia}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

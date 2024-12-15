@@ -28,7 +28,8 @@ namespace MVVMFirma.ViewModels
                    {
                        KoszykID = koszykZakupowy.KoszykID,
                        KlienciEmail = koszykZakupowy.Klienci.Email,
-                       KlienciTelefon = koszykZakupowy.Klienci.Telefon
+                       KlienciTelefon = koszykZakupowy.Klienci.Telefon,
+                       DataUtworzenia = koszykZakupowy.DataUtworzenia
                    }
                 );
         }

@@ -385,8 +385,10 @@ namespace MVVMFirma.ViewModels
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
         }
+
         private void open(string name)  //name to jest wysłany komunikat
-        {
+        {           
+
             if (name == "DostawcyAdd")
                 CreateView(new NowyDostawcaViewModel()); //to wywyołujemy zakładkę do dodawania nowego dostawcy
 
@@ -408,13 +410,13 @@ namespace MVVMFirma.ViewModels
             if (name == "KategorieAdd")
                 CreateView(new NowaKategoriaViewModel());
 
-            if (name == "Koszyki zakupoweAdd")  //nie dziala
+            if (name == "Koszyki ZakupoweAdd")  //nie dziala
                 CreateView(new NowyKoszykZakupowyViewModel());
 
-            if (name == "PlatnosciAdd")
+            if (name == "PłatnościAdd")
                 CreateView(new NowaPlatnoscViewModel());
 
-            if (name == "Produkty dostawcyAdd")
+            if (name == "Produkty DostawcyAdd")
                 CreateView(new NowyProduktDostawcyViewModel()); 
 
             if (name == "ProduktyAdd")
@@ -426,7 +428,7 @@ namespace MVVMFirma.ViewModels
             if (name == "RecenzjeAdd")
                 CreateView(new NowaRecenzjaViewModel()); 
 
-            if (name == "Stany magazynoweAdd")
+            if (name == "Stan magazynowyAdd")
                 CreateView(new NowyStanMagazynowyViewModel()); 
 
             if (name == "Szczegoly ZamowieniaAdd")

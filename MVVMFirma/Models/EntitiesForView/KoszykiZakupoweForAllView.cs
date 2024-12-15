@@ -11,5 +11,8 @@ namespace MVVMFirma.Models.EntitiesForView
         public int KoszykID { get; set; }
         public string KlienciEmail { get; set; }
         public string KlienciTelefon {  get; set; } 
+
+        public DateTime? DataUtworzenia { get; set; }
+
     }
 }
