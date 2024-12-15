@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -24,7 +25,7 @@
                   SelectedValuePath="Key"
                   SelectedValue="{Binding Path=ZamowienieID, Mode=TwoWay}"
                   />
-
+        
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Data wystawienia"/>
         <DatePicker Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" SelectedDate="{Binding Path=DataWystawienia, UpdateSourceTrigger=PropertyChanged}"/>
 

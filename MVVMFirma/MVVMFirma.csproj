@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="Helper\BaseCommand.cs" />
     <Compile Include="Models\BusinessLogic\DataBaseClass.cs" />
+    <Compile Include="Models\BusinessLogic\FakturyB.cs" />
     <Compile Include="Models\BusinessLogic\ZamowieniaB.cs" />
     <Compile Include="Models\EntitiesForView\DostawcyForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ElementyKoszykaForAllView.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszyscyDostawcyViewModel.cs" />
     <Compile Include="ViewModels\WszyscyKlienciViewModel.cs" />
+    <Compile Include="ViewModels\WszyscyKontrahenciViewModel.cs" />
     <Compile Include="ViewModels\WszyscyPracownicyViewModel.cs" />
     <Compile Include="ViewModels\WszystkieAdresyViewModel.cs" />
     <Compile Include="ViewModels\WszystkieElementyKoszykaViewModel.cs" />
@@ -272,6 +274,9 @@
     </Compile>
     <Compile Include="Views\WszyscyKlienciView.xaml.cs">
       <DependentUpon>WszyscyKlienciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WszyscyKontrahenciView.xaml.cs">
+      <DependentUpon>WszyscyKontrahenciView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WszyscyPracownicyView.xaml.cs">
       <DependentUpon>WszyscyPracownicyView.xaml</DependentUpon>
@@ -439,6 +444,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WszyscyKlienciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WszyscyKontrahenciView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

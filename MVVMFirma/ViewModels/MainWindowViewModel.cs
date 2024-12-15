@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Windows.Data;
 using MVVMFirma.Models.Entities;
 using GalaSoft.MvvmLight.Messaging;
+using System.Xml.Serialization;
 
 namespace MVVMFirma.ViewModels
 {
@@ -86,6 +87,10 @@ namespace MVVMFirma.ViewModels
                 new CommandViewModel(
                     "Faktury",
                     new BaseCommand(() => this.ShowAllFaktury())),
+
+                //new CommandViewModel(
+                //    "Kontrahenci",
+                //    new BaseCommand(() => this.ShowAllKontrahenci())),
 
                 new CommandViewModel(
                     "Klient",
@@ -432,5 +437,6 @@ namespace MVVMFirma.ViewModels
 
         }
         #endregion
+
     }
 }
