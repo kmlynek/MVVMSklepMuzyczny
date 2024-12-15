@@ -1,4 +1,5 @@
-﻿using MVVMFirma.Helper;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
 using MVVMFirma.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace MVVMFirma.ViewModels
         #region DB
         protected readonly SklepMuzycznyEntities sklepMuzycznyEntities;//to jest pole, ktore reprezentuje baze danych
         #endregion
-        #region LoadCommand
+        #region Command
         private BaseCommand _LoadCommand;//to jest komenda, która będzie wywoływała funkcję Load pobierającą z bazy danych
         public ICommand LoadCommand
         {
@@ -24,6 +25,16 @@ namespace MVVMFirma.ViewModels
                 if (_LoadCommand == null)
                     _LoadCommand = new BaseCommand(() => Load());
                 return _LoadCommand;
+            }
+        }
+        private BaseCommand _AddCommand;//to jest komenda, która będzie wywoływała funkcję add wywołującą okno do dodawania i zostanie podpięta pod przycisk dodaj 
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (_AddCommand == null)
+                    _AddCommand = new BaseCommand(() => add());
+                return _AddCommand;
             }
         }
         #endregion
@@ -54,6 +65,12 @@ namespace MVVMFirma.ViewModels
         #endregion
         #region Helpers
         public abstract void Load();
+        private void add()
+        {
+            //Messenger jest biblioteki MVVMLight, dzięki messengerowi wysyłami do innych obiektów komunikat DisplayName addd, gdzie DisplayName jest nazwą widoku
+            //Ten komunikat odbierze MainWindowViewModel, które jest odpowiedzialne za otwieranie okien
+            Messenger.Default.Send(DisplayName + "Add");
+        }        
         #endregion
     }
 }

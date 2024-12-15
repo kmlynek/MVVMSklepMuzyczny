@@ -9,6 +9,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Data;
 using MVVMFirma.Models.Entities;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace MVVMFirma.ViewModels
 {
@@ -34,6 +35,8 @@ namespace MVVMFirma.ViewModels
         }
         private List<CommandViewModel> CreateCommands()
         {
+            //To jest messenger, który oczekuje na stringa i jak go złapie to wywołuje metodę open, która jest zdefinowana w regionie helpersow
+            Messenger.Default.Register<string>(this, open);
             return new List<CommandViewModel>
             {
                 //new CommandViewModel(
@@ -376,6 +379,57 @@ namespace MVVMFirma.ViewModels
             ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.Workspaces);
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
+        }
+        private void open(string name)  //name to jest wysłany komunikat
+        {
+            if (name == "DostawcyAdd")
+                CreateView(new NowyDostawcaViewModel()); //to wywyołujemy zakładkę do dodawania nowego dostawcy
+
+            if (name == "FakturyAdd")
+                CreateView(new NowaFakturaViewModel());
+
+            if (name == "KlienciAdd")
+                CreateView(new NowyKlientViewModel());
+
+            if (name == "PracownicyAdd")
+                CreateView(new NowyPracownikViewModel());
+
+            if (name == "AdresyAdd")
+                CreateView(new NowyAdresViewModel());
+
+            if (name == "Elementy KoszykaAdd")
+                CreateView(new NowyElementKoszykaViewModel());
+
+            if (name == "KategorieAdd")
+                CreateView(new NowaKategoriaViewModel());
+
+            if (name == "Koszyki zakupoweAdd")  //nie dziala
+                CreateView(new NowyKoszykZakupowyViewModel());
+
+            if (name == "PlatnosciAdd")
+                CreateView(new NowaPlatnoscViewModel());
+
+            if (name == "Produkty dostawcyAdd")
+                CreateView(new NowyProduktDostawcyViewModel()); 
+
+            if (name == "ProduktyAdd")
+                CreateView(new NowyProduktViewModel()); 
+
+            if (name == "PromocjeAdd")
+                CreateView(new NowaPromocjaViewModel()); 
+
+            if (name == "RecenzjeAdd")
+                CreateView(new NowaRecenzjaViewModel()); 
+
+            if (name == "Stany magazynoweAdd")
+                CreateView(new NowyStanMagazynowyViewModel()); 
+
+            if (name == "Szczegoly ZamowieniaAdd")
+                CreateView(new NoweSzczegolyZamowieniaViewModel());
+
+            if (name == "ZamowieniaAdd")
+                CreateView(new NoweZamowienieViewModel());
+
         }
         #endregion
     }
