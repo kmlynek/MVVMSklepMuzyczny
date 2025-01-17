@@ -3,6 +3,7 @@ using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -64,6 +65,9 @@ namespace MVVMFirma.ViewModels
             sklepMuzycznyEntities.Faktury.Add(item);
             sklepMuzycznyEntities.SaveChanges();
         }
+        #endregion
+        #region Validation
+        
         #endregion
     }
 }

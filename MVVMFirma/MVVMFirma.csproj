@@ -90,11 +90,13 @@
     <Compile Include="Models\BusinessLogic\AdresyB.cs" />
     <Compile Include="Models\BusinessLogic\DataBaseClass.cs" />
     <Compile Include="Models\BusinessLogic\DostawcyB.cs" />
-    <Compile Include="Models\BusinessLogic\FakturyB.cs" />
     <Compile Include="Models\BusinessLogic\KategorieB.cs" />
     <Compile Include="Models\BusinessLogic\KlienciB.cs" />
+    <Compile Include="Models\BusinessLogic\KosztyB.cs" />
     <Compile Include="Models\BusinessLogic\KoszykiZakupoweB.cs" />
     <Compile Include="Models\BusinessLogic\ProduktyB.cs" />
+    <Compile Include="Models\BusinessLogic\ProduktyDostawcyB.cs" />
+    <Compile Include="Models\BusinessLogic\SprzedazB.cs" />
     <Compile Include="Models\BusinessLogic\ZamowieniaB.cs" />
     <Compile Include="Models\EntitiesForView\DostawcyForAllView.cs" />
     <Compile Include="Models\EntitiesForView\ElementyKoszykaForAllView.cs" />
@@ -177,6 +179,9 @@
     <Compile Include="Models\Entities\Zamowienia.cs">
       <DependentUpon>ModelSklepMuzyczny.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validatory\BiznesValidator.cs" />
+    <Compile Include="Models\Validatory\StringValidator.cs" />
+    <Compile Include="Models\Validatory\Validator.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\JedenViewModel.cs" />
@@ -198,6 +203,8 @@
     <Compile Include="ViewModels\NowyProduktViewModel.cs" />
     <Compile Include="ViewModels\NowyStanMagazynowyViewModel.cs" />
     <Compile Include="ViewModels\NowyTowarViewModel.cs" />
+    <Compile Include="ViewModels\RaportSprzedazyViewModel.cs" />
+    <Compile Include="ViewModels\RaportZrealizowanychZamowienViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\WszyscyDostawcyViewModel.cs" />
     <Compile Include="ViewModels\WszyscyKlienciViewModel.cs" />
@@ -274,6 +281,12 @@
     </Compile>
     <Compile Include="Views\NowyTowarView.xaml.cs">
       <DependentUpon>NowyTowarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportSprzedazyView.xaml.cs">
+      <DependentUpon>RaportSprzedazyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RaportZrealizowanychZamowienView.xaml.cs">
+      <DependentUpon>RaportZrealizowanychZamowienView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WszyscyDostawcyView.xaml.cs">
       <DependentUpon>WszyscyDostawcyView.xaml</DependentUpon>
@@ -442,6 +455,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NowyTowarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportSprzedazyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RaportZrealizowanychZamowienView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

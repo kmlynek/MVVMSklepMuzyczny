@@ -10,5 +10,6 @@ namespace MVVMFirma.Models.EntitiesForView
     {
         public int Key { get; set; }
         public string Value { get; set; }
+        public decimal? NumericValue { get; set; }
     }
 }

@@ -107,8 +107,12 @@
     <DataTemplate DataType="{x:Type vm:WszystkieZamowieniaViewModel}">
         <vw:WszystkieZamowieniaView/>
     </DataTemplate>
-
-
+    <DataTemplate DataType="{x:Type vm:RaportZrealizowanychZamowienViewModel}">
+        <vw:RaportZrealizowanychZamowienView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportSprzedazyViewModel}">
+        <vw:RaportSprzedazyView/>
+    </DataTemplate>
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

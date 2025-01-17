@@ -1,8 +1,10 @@
 ﻿using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
+using MVVMFirma.Models.Validatory;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MVVMFirma.ViewModels
 {
-    public class NowyProduktViewModel : JedenViewModel<Produkty>
+    public class NowyProduktViewModel : JedenViewModel<Produkty>, IDataErrorInfo
     {
         #region Constructor
         public NowyProduktViewModel()
@@ -58,7 +60,7 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => Cena);
             }
         }
-        
+
         public int? KategoriaID
         {
             get
@@ -92,5 +94,34 @@ namespace MVVMFirma.ViewModels
             sklepMuzycznyEntities.SaveChanges();
         }
         #endregion
+        #region Validation
+        public string Error
+        {
+            get
+            {
+                return null;
+            }
+        }
+        public string this[string name]
+        {
+            get
+            {
+                string komunikat = null;
+                if (name == "Nazwa")
+                    komunikat = StringValidator.SprawdzCzyZaczynaSieOdDuzej(this.Nazwa);
+                if (name == "Cena")
+                    komunikat = BiznesValidator.SprawdzCene(this.Cena);
+                return komunikat;
+            }
+        }
+
+            public override bool IsValid()  //Funkcja ta sprawdza czy rekord jest gotowy do zapisu
+        {
+            if (this["Nazwa"] == null && this["Cena"] == null)
+                return true;
+            return false;
+        }
+            #endregion
+        }
     }
-}
+

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MVVMFirma.Views.RaportZrealizowanychZamowienView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMFirma.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White" Width="600" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Wartość zamówień dla wybranego produktu"
+               Margin="3" HorizontalContentAlignment="Center"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Wybierz Produkt:" Margin="3"/>
+            <ComboBox Grid.Column="1" Margin="3" ItemsSource="{Binding KosztyItems}"
+                      DisplayMemberPath="Value"
+                      SelectedValuePath="Key"
+                      SelectedValue="{Binding Path=ProduktID, Mode=TwoWay}"/>
+        </Grid>
+        <Button Grid.Row="3" Content="Oblicz" Margin="3" Command="{Binding ObliczCommand}"/>
+        <Grid Grid.Row="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Content="Koszty wynoszą:" Margin="2"/>
+        <Label Grid.Column="1" Content="{Binding Koszt}" Margin="2"/>
+    </Grid>
+    </Grid>
+</UserControl>

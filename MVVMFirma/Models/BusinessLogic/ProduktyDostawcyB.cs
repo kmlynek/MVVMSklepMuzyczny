@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MVVMFirma.Models.BusinessLogic
 {
-    public class ProduktyB : DataBaseClass
+    public class ProduktyDostawcyB : DataBaseClass
     {
         #region Konstruktor
-        public ProduktyB(SklepMuzycznyEntities db)
+        public ProduktyDostawcyB(SklepMuzycznyEntities db)
             : base(db) { }
         #endregion
         #region Funkcje biznesowe
@@ -19,11 +19,11 @@ namespace MVVMFirma.Models.BusinessLogic
         public IQueryable<KeyAndValue> GetProduktyKeyAndValueItems()
         {
             return (
-                from produkt in db.Produkty
+                from produktDostawcy in db.ProduktyDostawcy
                 select new KeyAndValue
                 {
-                    Key = produkt.ProduktID,
-                    Value = produkt.Nazwa + " ; " + produkt.Opis + " ; " + produkt.Cena
+                    Key = produktDostawcy.ProduktDostawcaID,
+                    Value = produktDostawcy.Produkty.Nazwa + " ; " + produktDostawcy.Dostawcy.Nazwa + " ; "
                 }
                 ).ToList().AsQueryable();
         }

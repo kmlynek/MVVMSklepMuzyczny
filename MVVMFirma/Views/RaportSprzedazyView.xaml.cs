@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace MVVMFirma.Views
 {
     /// <summary>
-    /// Interaction logic for NowaPromocjaView.xaml
+    /// Interaction logic for RaportSprzedazyView.xaml
     /// </summary>
-    public partial class NowaPromocjaView : JedenViewBase
+    public partial class RaportSprzedazyView : UserControl
     {
-        public NowaPromocjaView()
+        public RaportSprzedazyView()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

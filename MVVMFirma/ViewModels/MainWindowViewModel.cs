@@ -79,7 +79,7 @@ namespace MVVMFirma.ViewModels
                 new CommandViewModel(
                     "Elementy Koszyka",
                     new BaseCommand(() => this.ShowAllElementyKoszyka())),
-               
+
                 new CommandViewModel(
                     "Faktura",
                     new BaseCommand(() => this.CreateView(new NowaFakturaViewModel()))),
@@ -179,8 +179,14 @@ namespace MVVMFirma.ViewModels
                 new CommandViewModel(
                     "Zamowienia",
                     new BaseCommand(() => this.ShowAllZamowienia())),
-            };
 
+                new CommandViewModel(
+                    "Raport Zamowien",
+                    new BaseCommand(() => this.CreateView(new RaportZrealizowanychZamowienViewModel()))),
+                new CommandViewModel(
+                    "Raport Sprzedazy",
+                    new BaseCommand(() => this.CreateView(new RaportSprzedazyViewModel())))
+            };
         }
         #endregion
 
