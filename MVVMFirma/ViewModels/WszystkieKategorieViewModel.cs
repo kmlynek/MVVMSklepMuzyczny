@@ -1,4 +1,5 @@
-﻿using MVVMFirma.Models.Entities;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,23 @@ namespace MVVMFirma.ViewModels
         public WszystkieKategorieViewModel()
             : base("Kategorie")
         {
+        }
+        #endregion
+        #region Properties
+        private Kategorie _WybranaKategoria;
+        public Kategorie WybranaKategoria
+        {
+            get
+            {
+                return _WybranaKategoria;
+            }
+            set
+            {
+                _WybranaKategoria = value;
+                //Messengerem wysyłamy wybraną Kategorię do okna Produkt
+                Messenger.Default.Send(_WybranaKategoria);
+                OnRequestClose();
+            }
         }
         #endregion
         #region Helpers

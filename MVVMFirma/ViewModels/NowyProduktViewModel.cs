@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using MVVMFirma.Models.Validatory;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 
 namespace MVVMFirma.ViewModels
@@ -20,7 +23,25 @@ namespace MVVMFirma.ViewModels
             : base("Produkt")
         {
             item = new Produkty();
+            Messenger.Default.Register<Kategorie>(this, getWybranaKategoria);
         }
+        #region Command
+        private BaseCommand _ShowKategorie; // komenda wywola funkcje ShowAdresy, wywołującą funkcję wyświetlenia Adresów, podpięta pod przycisk ...
+
+        public ICommand ShowKategorie
+        {
+            get
+            {
+                if (_ShowKategorie == null)
+                    _ShowKategorie = new BaseCommand(() => showKategorie());
+                return _ShowKategorie;
+            }
+        }
+        private void showKategorie()
+        {
+            Messenger.Default.Send<string>("KategorieAll");
+        }
+        #endregion
         #endregion
         #region Pola
         //dla każdego pola na interface dodajemy properties
@@ -74,6 +95,14 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        public string KategoriaNazwa { get; set; }
+        public string KategoriaOpis { get; set; }
+        private void getWybranaKategoria(Kategorie kategoria)
+        {
+            KategoriaID = kategoria.KategoriaID;
+            KategoriaNazwa = kategoria.Nazwa;
+            KategoriaOpis = kategoria.Opis;
+        }
 
         #endregion
         #region Właściwości dla Combobox

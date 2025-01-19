@@ -331,19 +331,6 @@ namespace MVVMFirma.ViewModels
         }
 
 
-        //private void ShowAllTowar()
-        //{
-        //    WszystkieTowaryViewModel workspace =
-        //        this.Workspaces.FirstOrDefault(vm => vm is WszystkieTowaryViewModel)
-        //        as WszystkieTowaryViewModel;
-        //    if (workspace == null)
-        //    {
-        //        workspace = new WszystkieTowaryViewModel();
-        //        this.Workspaces.Add(workspace);
-        //    }
-
-        //    this.SetActiveWorkspace(workspace);
-        //}
         //private void ShowAllAdresy()
         //{
         //    WszystkieAdresyViewModel workspace =
@@ -357,32 +344,7 @@ namespace MVVMFirma.ViewModels
 
         //    this.SetActiveWorkspace(workspace);
         //}
-        //private void ShowAllDostawcy()
-        //{
-        //    WszyscyDostawcyViewModel workspace =
-        //        this.Workspaces.FirstOrDefault(vm => vm is WszyscyDostawcyViewModel)
-        //        as WszyscyDostawcyViewModel;
-        //    if (workspace == null)
-        //    {
-        //        workspace = new WszyscyDostawcyViewModel();
-        //        this.Workspaces.Add(workspace);
-        //    }
-
-        //    this.SetActiveWorkspace(workspace);
-        //}
-        //private void ShowAllElementyKoszyka()
-        //{
-        //    WszystkieElementyKoszykaViewModel workspace =
-        //        this.Workspaces.FirstOrDefault(vm => vm is WszystkieElementyKoszykaViewModel)
-        //        as WszystkieElementyKoszykaViewModel;
-        //    if (workspace == null)
-        //    {
-        //        workspace = new WszystkieElementyKoszykaViewModel();
-        //        this.Workspaces.Add(workspace);
-        //    }
-
-        //    this.SetActiveWorkspace(workspace);
-        //}
+        
         private void SetActiveWorkspace(WorkspaceViewModel workspace)
         {
             Debug.Assert(this.Workspaces.Contains(workspace));
@@ -443,6 +405,11 @@ namespace MVVMFirma.ViewModels
             if (name == "ZamowieniaAdd")
                 CreateView(new NoweZamowienieViewModel());
 
+            if (name == "AdresyAll")
+                ShowAllAdresy();
+            
+            if (name == "KategorieAll")
+                ShowAllKategorie();
         }
         #endregion
 

@@ -10,7 +10,7 @@ namespace MVVMFirma.Models.Validatory
     {
         public static string SprawdzCene(decimal? cena)
         {
-            if (cena < 0)
+            if (cena <= 0)
                 return "Cena powinna być wyższa od 0!";
             return null;
         }

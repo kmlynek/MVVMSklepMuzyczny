@@ -27,12 +27,15 @@
         <Label Grid.Column="0" Grid.Row="1" Margin="0,8,0,8" Content="Kontakt"/>
         <TextBox Grid.Column="1" Grid.Row="1" Margin="0,8,0,8" Text="{Binding Path=Kontakt,UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Adres"/>
-        <ComboBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8"
-          ItemsSource="{Binding AdresyItems}"
-          DisplayMemberPath="Value"
-          SelectedValuePath="Key"
-          SelectedValue="{Binding Path=AdresID, Mode=TwoWay}"
-          />
+        <Label Grid.Column="0" Grid.Row="2" Margin="0,8,0,8" Content="Dostawca Ulica"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,8,0,8" IsEnabled="False" Text="{Binding Path=AdresUlica,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="..." Grid.Column="2" Grid.Row="2" Margin="8,8,0,8" Command="{Binding ShowAdresy}"/>
+
+        <Label Grid.Column="0" Grid.Row="3" Margin="0,8,0,8" Content="Dostawca Kod Pocztowy"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,8,0,8" IsEnabled="False" Text="{Binding Path=AdresKodPocztowy,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Column="0" Grid.Row="4" Margin="0,8,0,8" Content="Dostawca Kraj"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,8,0,8" IsEnabled="False" Text="{Binding Path=AdresKraj,UpdateSourceTrigger=PropertyChanged}"/>
+
     </Grid>
 </local:JedenViewBase>

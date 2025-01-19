@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using MVVMFirma.Models.Validatory;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 
 namespace MVVMFirma.ViewModels
@@ -20,6 +23,26 @@ namespace MVVMFirma.ViewModels
             : base("Klient")
         {
             item = new Klienci();
+            //to jest Messenger, który oczekuje na Adres z widoku z wszystkimi adresami
+            // jak złapiemy, to jest wywoływana metoda getWybranyAdres
+            Messenger.Default.Register<Adresy>(this, getWybranyAdres);
+        }
+        #endregion
+        #region Command
+        private BaseCommand _ShowAdresy; // komenda wywola funkcje ShowAdresy, wywołującą funkcję wyświetlenia Adresów, podpięta pod przycisk ...
+
+        public ICommand ShowAdresy
+        {
+            get
+            {
+                if (_ShowAdresy == null)
+                    _ShowAdresy = new BaseCommand(() => showAdresy());
+                return _ShowAdresy;
+            }
+        }
+        private void showAdresy()
+        {
+            Messenger.Default.Send<string>("AdresyAll");
         }
         #endregion
         #region Pola
@@ -86,6 +109,18 @@ namespace MVVMFirma.ViewModels
             }
         }
 
+        public string AdresNazwa { get; set; }
+        public string AdresUlica { get; set; }
+        public string AdresKodPocztowy { get; set; }
+        public string AdresKraj { get; set; }
+        private void getWybranyAdres(Adresy adres)
+        {
+            AdresID = adres.AdresID;
+            AdresUlica = adres.Ulica;
+            AdresKodPocztowy = adres.KodPocztowy;
+            AdresKraj = adres.Kraj;
+        }
+          
 
         #endregion
         #region Właściwości dla Combobox
@@ -100,6 +135,8 @@ namespace MVVMFirma.ViewModels
 
         #endregion
         #region Helpers
+        //to ejst funkcja, która wywoła się po przesłaniu adresu z okna wszysctkie adresy
+ 
         public override void Save()
         {
             sklepMuzycznyEntities.Klienci.Add(item);

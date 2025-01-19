@@ -1,4 +1,6 @@
-﻿using MVVMFirma.Models.BusinessLogic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using MVVMFirma.Helper;
+using MVVMFirma.Models.BusinessLogic;
 using MVVMFirma.Models.Entities;
 using MVVMFirma.Models.EntitiesForView;
 using System;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 
 namespace MVVMFirma.ViewModels
@@ -18,6 +21,24 @@ namespace MVVMFirma.ViewModels
             : base("Dostawca")
         {
             item = new Dostawcy();
+            Messenger.Default.Register<Adresy>(this, getWybranyAdres);
+        }
+        #endregion
+        #region Command
+        private BaseCommand _ShowAdresy; // komenda wywola funkcje ShowAdresy, wywołującą funkcję wyświetlenia Adresów, podpięta pod przycisk ...
+
+        public ICommand ShowAdresy
+        {
+            get
+            {
+                if (_ShowAdresy == null)
+                    _ShowAdresy = new BaseCommand(() => showAdresy());
+                return _ShowAdresy;
+            }
+        }
+        private void showAdresy()
+        {
+            Messenger.Default.Send<string>("AdresyAll");
         }
         #endregion
         #region Pola
@@ -59,11 +80,21 @@ namespace MVVMFirma.ViewModels
                 OnPropertyChanged(() => AdresID);
             }
         }
-
+        public string AdresNazwa { get; set; }
+        public string AdresUlica { get; set; }
+        public string AdresKodPocztowy { get; set; }
+        public string AdresKraj { get; set; }
+        private void getWybranyAdres(Adresy adres)
+        {
+            AdresID = adres.AdresID;
+            AdresUlica = adres.Ulica;
+            AdresKodPocztowy = adres.KodPocztowy;
+            AdresKraj = adres.Kraj;
+        }
 
         #endregion
-            #region Właściwości dla Combobox
-            //properties, który uzuepełni wszystkie Faktury w comboboxie
+        #region Właściwości dla Combobox
+        //properties, który uzuepełni wszystkie Faktury w comboboxie
         public IQueryable<KeyAndValue> AdresyItems
         {
             get
