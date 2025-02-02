@@ -22,23 +22,49 @@ namespace MVVMFirma.ViewModels
         //tu decydujemy po czym sortować do Comboboxa
         public override List<string> GetComboboxSortList()
         {
-            return null;
+            return new List<string> { "ilosc", "nazwa", "nazwisko" };
         }
         //tu decydujemy jak sortować
         public override void Sort()
         {
-
+            if (SortField == "ilosc")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(List.OrderBy(item => item.Ilosc));
+            if (SortField == "nazwa")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(List.OrderBy(item => item.ProduktyNazwa));
+            if (SortField == "nazwisko")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(List.OrderBy(item => item.ZamowieniaKlienciNazwisko));
         }
         //tu decydujemy po czym wyszukiwać do Comboboxa
         public override List<string> GetComboboxFindList()
         {
-            return null;
+            return new List<string> { "ilosc", "nazwa", "nazwisko" };
         }
         //tu decydujemy jak wyszukiwać
         public override void Find()
         {
+            if (string.IsNullOrEmpty(FindTextBox) || List == null)
+                return;
 
+            if (FindField == "ilosc")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(
+                    //Jesli textbox nie jest nullem 
+                    List.Where(item => item.Ilosc.HasValue && // Sprawdzamy, czy Ilosc nie jest null
+                               item.Ilosc.Value.ToString().StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );//ignorujemy wielkosc liter
+
+            if (FindField == "nazwa")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(
+                    List.Where(item => !string.IsNullOrEmpty(item.ProduktyNazwa) &&
+                                       item.ProduktyNazwa.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );
+
+            if (FindField == "nazwisko")
+                List = new ObservableCollection<SzczegolyZamowieniaForAllView>(
+                    List.Where(item => !string.IsNullOrEmpty(item.ZamowieniaKlienciNazwisko) &&
+                                       item.ZamowieniaKlienciNazwisko.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );
         }
+
         #endregion
         #region Helpers
         //metoda load pobiera wszystkie adresy z bazy danych

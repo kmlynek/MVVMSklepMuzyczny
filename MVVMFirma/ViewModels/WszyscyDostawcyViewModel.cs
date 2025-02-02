@@ -22,23 +22,41 @@ namespace MVVMFirma.ViewModels
         //tu decydujemy po czym sortować do Comboboxa
         public override List<string> GetComboboxSortList()
         {
-            return null;
+            return new List<string> { "nazwa", "kontakt" };
         }
         //tu decydujemy jak sortować
         public override void Sort()
         {
-
+            if (SortField == "nazwa")
+                List = new ObservableCollection<DostawcyForAllView>(List.OrderBy(item => item.Nazwa));
+            if (SortField == "kontakt")
+                List = new ObservableCollection<DostawcyForAllView>(List.OrderBy(item => item.Kontakt));
         }
         //tu decydujemy po czym wyszukiwać do Comboboxa
         public override List<string> GetComboboxFindList()
         {
-            return null;
+            return new List<string> { "nazwa", "kontakt" };
         }
         //tu decydujemy jak wyszukiwać
         public override void Find()
         {
+            if (string.IsNullOrEmpty(FindTextBox) || List == null)
+                return;
 
+            if (FindField == "nazwa")
+                List = new ObservableCollection<DostawcyForAllView>(
+                    //Jesli textbox nie jest nullem 
+                    List.Where(item => !string.IsNullOrEmpty(item.Nazwa) &&
+                                       item.Nazwa.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );//ignorujemy wielkosc liter
+
+            if (FindField == "kontakt")
+                List = new ObservableCollection<DostawcyForAllView>(
+                    List.Where(item => !string.IsNullOrEmpty(item.Kontakt) &&
+                                       item.Kontakt.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );
         }
+
         #endregion
         #region Helpers
         //metoda load pobiera wszystkie adresy z bazy danych

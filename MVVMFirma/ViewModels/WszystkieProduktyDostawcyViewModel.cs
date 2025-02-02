@@ -22,23 +22,41 @@ namespace MVVMFirma.ViewModels
         //tu decydujemy po czym sortować do Comboboxa
         public override List<string> GetComboboxSortList()
         {
-            return null;
+            return new List<string> { "nazwa dostawcy", "cena" };
         }
         //tu decydujemy jak sortować
         public override void Sort()
         {
-
+            if (SortField == "nazwa dostawcy")
+                List = new ObservableCollection<ProduktyDostawcyForAllView>(List.OrderBy(item => item.DostawcyNazwa));
+            if (SortField == "cena")
+                List = new ObservableCollection<ProduktyDostawcyForAllView>(List.OrderBy(item => item.ProduktyCena));
         }
         //tu decydujemy po czym wyszukiwać do Comboboxa
         public override List<string> GetComboboxFindList()
         {
-            return null;
+            return new List<string> { "nazwa dostawcy", "cena" };
         }
         //tu decydujemy jak wyszukiwać
         public override void Find()
         {
+            if (string.IsNullOrEmpty(FindTextBox) || List == null)
+                return;
 
+            if (FindField == "nazwa dostawcy")
+                List = new ObservableCollection<ProduktyDostawcyForAllView>(
+                    //Jesli textbox nie jest nullem 
+                    List.Where(item => !string.IsNullOrEmpty(item.DostawcyNazwa) &&
+                                       item.DostawcyNazwa.StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );//ignorujemy wielkosc liter
+
+            if (FindField == "cena")
+                List = new ObservableCollection<ProduktyDostawcyForAllView>(
+                    List.Where(item => item.ProduktyCena.HasValue && // Sprawdzamy, czy cena nie jest null
+                                       item.ProduktyCena.Value.ToString().StartsWith(FindTextBox, StringComparison.OrdinalIgnoreCase))
+                );
         }
+
         #endregion
         #region Helpers
         //metoda load pobiera wszystkie adresy z bazy danych
