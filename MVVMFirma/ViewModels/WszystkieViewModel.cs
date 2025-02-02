@@ -70,7 +70,54 @@ namespace MVVMFirma.ViewModels
             //Messenger jest biblioteki MVVMLight, dzięki messengerowi wysyłami do innych obiektów komunikat DisplayName addd, gdzie DisplayName jest nazwą widoku
             //Ten komunikat odbierze MainWindowViewModel, które jest odpowiedzialne za otwieranie okien
             Messenger.Default.Send(DisplayName + "Add");
-        }        
+        }
+        #endregion
+        #region Sort And Filtr
+        //do sortowania
+        //wynik wyboru po czym sortować zostanie zapisany w SortField
+        public string SortField { get; set; }
+        public List<string> SortComboboxItems
+        {
+            get
+            {
+                return GetComboboxSortList();
+            }
+        }
+        public abstract List<string> GetComboboxSortList();
+        private BaseCommand _SortCommand; //to jest komenda, która będzie wywoływana po naciśnięciu sortuj
+        public ICommand SortCommand
+        {
+            get
+            {
+                if (_SortCommand == null)
+                    _SortCommand = new BaseCommand(() => Sort());
+                return _SortCommand;
+            }
+        }
+        public abstract void Sort();
+        //do filtrowania
+        public string FindField { get; set; }
+        public List<string> FindComboboxItems
+        {
+            get
+            {
+                return GetComboboxFindList();
+            }
+        }
+        public abstract List<string> GetComboboxFindList();
+        public string FindTextBox { get; set; }
+
+        private BaseCommand _FindCommand; //to jest komenda, która będzie wywoływana po naciśnięciu sortuj
+        public ICommand FindCommand
+        {
+            get
+            {
+                if (_FindCommand == null)
+                    _FindCommand = new BaseCommand(() => Find());
+                return _FindCommand;
+            }
+        }
+        public abstract void Find();
         #endregion
     }
 }
